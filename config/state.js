@@ -1,5 +1,5 @@
 // Global state shared across all modules
-module.exports = {
+export default {
     sessions: {},
     userSockets: {},
     messageLogs: {}
