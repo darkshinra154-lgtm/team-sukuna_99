@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     startimage: 'https://files.catbox.moe/qwvzbn.png',
     ownerNumber: process.env.OWNER_NUMBER || '919833201990',
     botName: 'MD-ZESHOO',

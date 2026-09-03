@@ -1,15 +1,14 @@
-require('dotenv').config();
-const fs = require('fs-extra');
-const path = require('path');
+import 'dotenv/config';
+import fs from 'fs-extra';
+import path from 'path';
 
-const { botData, saveBotData } = require('./config/database');
-const state = require('./config/state');
-const { setupWebServer } = require('./handlers/webHandler');
-const { initializeTelegram } = require('./handlers/telegramHandler');
-const BotSession = require('./classes/BotSession');
-const settings = require('./settings');
+import { botData } from './config/database.js';
+import state from './config/state.js';
+import { setupWebServer } from './handlers/webHandler.js';
+import { initializeTelegram } from './handlers/telegramHandler.js';
+import BotSession from './classes/BotSession.js';
+import settings from './settings.js';
 
-// Load existing sessions on startup
 async function loadExistingSessions(io, tgBot) {
     try {
         const authDirs = await fs.readdir('./auth_info');
@@ -34,13 +33,10 @@ async function loadExistingSessions(io, tgBot) {
     }
 }
 
-// Initialize everything
 async function main() {
-    // Setup Telegram first (need tgBot for BotSession)
     const { server, io } = setupWebServer();
     const tgBot = initializeTelegram(io);
 
-    // Start server
     const PORT = process.env.PORT || 3000;
     server.listen(PORT, async () => {
         console.log(`🌑 ZESHOO MINI BOT v${settings.version} running on port ${PORT}`);

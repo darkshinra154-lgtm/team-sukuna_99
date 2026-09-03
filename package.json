@@ -3,6 +3,7 @@
   "version": "4.0.0",
   "description": "ZESHOO MINI BOT - Ultimate WhatsApp Automation Tool with 120+ Commands",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
@@ -19,7 +20,7 @@
     "fs-extra": "^11.3.5",
     "multer": "^1.4.5-lts.1",
     "node-telegram-bot-api": "^0.66.0",
-    "node-fetch": "^2.7.0",
+    "node-fetch": "^3.3.2",
     "node-webpmux": "^3.2.1",
     "openai": "^4.104.0",
     "pino": "^10.3.1",
@@ -33,14 +34,15 @@
     "nodemon": "^3.0.1"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=18.0.0"
   },
   "keywords": [
     "whatsapp-bot",
     "baileys",
     "zeshoo-md",
     "whatsapp-automation",
-    "bot"
+    "bot",
+    "esm"
   ],
   "author": "ZESHOO",
   "license": "MIT"
